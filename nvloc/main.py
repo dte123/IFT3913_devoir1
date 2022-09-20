@@ -20,3 +20,9 @@ def nvloc(file_name: str):
                 file_length += 1
 
     return file_length
+
+def test_nvloc():
+    print(nvloc(file_name="./jfreechart/src/main/java/org/jfree/data/xy/YWithXInterval.java"))
+
+if __name__ == "__main__":
+    test_nvloc()
