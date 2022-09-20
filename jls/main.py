@@ -1,3 +1,4 @@
+import csv
 import os
 
 
@@ -17,3 +18,19 @@ def jls(folder_path=""):
                 }
                 filelist.append(file_)
     return filelist
+
+
+def write_to_csv(folder_path:str):
+    csv_output = jls(folder_path)
+    keys = csv_output[0].keys()
+
+    with open("jls_output.csv", "w") as output_file:
+        dict_writer = csv.DictWriter(output_file, keys)
+        dict_writer.writeheader()
+        dict_writer.writerows(csv_output)
+    
+def test_jls():
+    write_to_csv("../jfreechart/src/main/java")
+
+if __name__ == "__main__":
+    test_jls()
