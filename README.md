@@ -15,12 +15,6 @@ This project requires Python 3.10 installed on your system
 >`egon/main.py` -  This contains the functionality of Part 3 of the assignment. When called the function expects folder path as input argument and returns `list` of `dict`s which contains the required `file_path`, `filename`, `class name` and corresponsing `csec` and `nvloc` values
 
 
-## Testing and Running
-### 1. Part 0 - JLS Program
-Function to test the running of the Program
-![JLS Test](./screenshots/jls_test.png)
-The snapshot of the output below proves it produced an accurate output
-![JLS Output](./screenshots/jls_output.png)
 
 
 ---
