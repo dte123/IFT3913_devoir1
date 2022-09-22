@@ -3,6 +3,9 @@
 ## Requirements
 This project requires Python 3.10 installed on your system
 
+## Code
+git@github.com:dte123/IFT3913_devoir1.git
+
 ## Running The Code
 > On Linux /MacOS 
 1. Open this code directory in terminal(Linux/MacOS)
