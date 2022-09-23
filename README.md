@@ -5,7 +5,7 @@ Yu Deng 20151659
 
 ## Explain
 This account(dte123) will only be used to submit IFT3913 homework.
-This job is completed by one person. <Jfreechart> in the master branch is uploaded remotely because the file is too large.
+This job is completed by one person. (Jfreechart) in the master branch is uploaded remotely because the file is too large.
 
 ## Requirements
 This project requires Python 3.10 installed on your system
