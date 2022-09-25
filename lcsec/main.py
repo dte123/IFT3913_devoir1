@@ -1,29 +1,20 @@
-import csv
+from jls.main import jls
 import os
 
 
-def read_csv(file_path):
-    with open(file_path) as f:
-        a = [
-            {k: v for k, v in row.items()}
-            for row in csv.DictReader(f, skipinitialspace=True)
-        ]
-    return a
-
-
-def lcsec(folder_name: str, csv_input_file: str):
+def lcsec(folder_name="", csv_input=None):
     if not folder_name:
         return "Folder name is required"
 
-    if not csv_input_file:
-        return "CSV file is required"
+    if not csv_input:
+        csv_input = jls(folder_name)
+    else:
+        if csv_input != jls(folder_name):
+            print("CSV Input doesn't match with the expected generation... \nGenerating New One")
 
-    csv_input = read_csv(str(os.path.abspath(csv_input_file)))
-
-    list_classes = [obj["class_name"] for obj in csv_input]
-
+    list_classes = [obj['class_name'] for obj in csv_input]
     for obj in csv_input:
-        obj["csec"] = count_usages(obj["filepath"], list_classes)
+        obj['csec'] = count_usages(obj['filepath'], list_classes)
 
     return csv_input
 
@@ -35,7 +26,7 @@ def count_usages(file_name: str, classes: list | None):
     file_name = os.path.abspath(file_name)
     if file_name is None:
         return
-    if not file_name.endswith(".java"):
+    if not file_name.endswith('.java'):
         print("Only Java Files are processed")
         return
     stringed = read_file_to_string(file_name)
@@ -62,21 +53,5 @@ def read_file_to_string(filename):
         if li.startswith("/") or li.startswith("*"):
             continue
         else:
-            file_string += li + "\n"
+            file_string += li +"\n"
     return file_string
-
-
-def test_lcsec():
-    output = sorted(
-        lcsec("./jfreechart/src/main/java", "./jls/jls_output.csv"),
-        key=lambda d: d["csec"],
-        reverse=True,
-    )
-    for item in output:
-        print(
-            f"{item['filepath']}, {item['package']}, {item['class_name']}, {item['csec']}"
-        )
-
-
-if __name__ == "__main__":
-    test_lcsec()
