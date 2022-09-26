@@ -1,10 +1,13 @@
 # IFT3913_devoir1
 
+## Name
+Yu Deng 20151659
+
 ## Requirements
 This project requires Python 3.10 installed on your system
 
 ## Git Repo
-All code is available [here](https://github.com/ands123/IFT3913_devoir1)
+
 
 ## Running The Code
 > On Linux /MacOS 
