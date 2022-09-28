@@ -3,6 +3,9 @@
 ## Name
 Yu Deng 20151659
 
+## Explanation
+The whole is written in python, and the right side shows that java occupies 99% because the jfreechart file is too large
+
 ## Requirements
 This project requires Python 3.10 installed on your system
 
